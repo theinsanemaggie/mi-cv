@@ -1,27 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --pink:   #E3006A;
+  --teal:   #027C7D;
+  --gold:   #CFB787;
+  --black:  #0D0D0D;
+  --dark:   #111111;
+  --dark2:  #1A1A1A;
+  --dark3:  #222222;
+  --muted:  #444444;
+  --faint:  #2A2A2A;
+  --text:   #CCCCCC;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  background: var(--black);
+  color: var(--text);
+  font-family: 'Space Mono', monospace;
+  font-size: 120%;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+::selection {
+  background: var(--pink);
+  color: #fff;
 }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--dark3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--pink); }
