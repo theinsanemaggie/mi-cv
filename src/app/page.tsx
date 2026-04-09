@@ -201,7 +201,7 @@ export default function Home() {
 
   return (
     <main
-      className="min-h-screen px-8 py-6 max-w-4xl mx-auto"
+      className="min-h-screen px-8 py-6 max-w-4xl mx-auto overflow-x-hidden"
       style={{ fontFamily: "'Space Mono', monospace" }}
     >
       {/* ── Grid background ── */}
@@ -529,7 +529,7 @@ export default function Home() {
 
       {/* ── Footer ── */}
       <footer
-        className="flex gap-3 pt-4 relative z-10"
+        className="flex flex-wrap gap-3 pt-4 relative z-10 justify-center"
         style={{ borderTop: "1px solid var(--dark3)" }}
       >
         <a
