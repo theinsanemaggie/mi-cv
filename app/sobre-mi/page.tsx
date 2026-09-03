@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { SectionLabel, TagPill } from "@/components/Tags"
 import { experience, education, skillsCode, skillsArt } from "@/lib/data"
 
@@ -13,10 +14,10 @@ export default function SobreMi() {
       {/* Perfil */}
       <section className="mb-12 flex items-center gap-5">
         <div
-          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0"
-          style={{ background: "#1a0012", border: "2px solid var(--pink)", color: "var(--pink)" }}
+          className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0"
+          style={{ border: "2px solid var(--pink)" }}
         >
-          MA
+          <Image src="/foto.png" alt="Magalí Amato" fill className="object-cover" />
         </div>
         <div>
           <h1 className="text-2xl font-bold" style={{ color: "var(--pink)" }}>

@@ -90,6 +90,12 @@ export const education: EducationItem[] = [
     period: "mar. 2023 – 2025",
     note: "Programación · Base de Datos · Redes · Gestión de Proyectos",
   },
+  {
+    degree: "Programación Backend I: Desarrollo Avanzado de Backend",
+    school: "Coderhouse",
+    period: "oct. 2025",
+    note: "MongoDB · JavaScript · Node.js · Express · API REST",
+  },
 ]
 
 export const skillsCode = ["C#", "TypeScript", "JavaScript", "Python", "Django", "React", "Next.js", "Node.js", "HTML/CSS", "SQL", "Git", "Scrum", "Soporte técnico", "Sistemas informáticos"]
@@ -115,10 +121,10 @@ export const softwareProjects: SysProject[] = [
   },
   {
     title: "ActividadGrupalP6",
-    desc: "Primer entrega grupal de Programación 6 (Analista de Sistemas, UNICABA). App desarrollada en equipo de 8 personas.",
+    desc: "Primer entrega grupal de Programación 6 (Analista de Sistemas, NSLP). App desarrollada en equipo de 8 personas.",
     tags: ["C#", "Equipo"],
     url: "https://github.com/theinsanemaggie/TrabajoProyecto",
-    year: "2024",
+    year: "2025",
     collab: true,
   },
   {
@@ -126,7 +132,7 @@ export const softwareProjects: SysProject[] = [
     desc: "Proyecto colaborativo de backoffice web. Contribución a sistema de gestión interna con HTML y estilos.",
     tags: ["HTML", "CSS"],
     url: "https://github.com/CarlaCarpi/BackOfficeCarli",
-    year: "2024",
+    year: "2025",
     collab: true,
   },
   {
@@ -134,7 +140,7 @@ export const softwareProjects: SysProject[] = [
     desc: "Proyecto colaborativo en C#. Desarrollo de sistema de gestión para negocio local.",
     tags: ["C#"],
     url: "https://github.com/CarlaCarpi/SantaRamona",
-    year: "2024",
+    year: "2025",
     collab: true,
   },
 ]
@@ -164,7 +170,7 @@ export const videojuegos: VideojuegoItem[] = [
     desc: "Videojuego desarrollado para Programación 2 de la carrera. Trabajo grupal con lógica de juego implementada en C#.",
     tags: ["C#", "Equipo"],
     githubUrl: "https://github.com/theinsanemaggie/JuegoNacional",
-    year: "2024",
+    year: "2023",
     collab: true,
   },
   {
@@ -172,7 +178,7 @@ export const videojuegos: VideojuegoItem[] = [
     desc: "Primer juego de Programación 1 en UNICABA. Ejercicio introductorio de lógica y estructuras básicas en C#.",
     tags: ["C#"],
     githubUrl: "https://github.com/theinsanemaggie/P1UNICABAJ1",
-    year: "2023",
+    year: "2026",
     collab: false,
   },
 ]
@@ -190,13 +196,14 @@ export type ArtItem = {
 }
 
 export const artItems: ArtItem[] = [
-  { src: "/art/obra1.jpg", alt: "Sam", title: "Sam - Stardew Valley" },
-  { src: "/art/obra8.jpg", alt: "Dave Mustaine", title: "Dave Mustaine - Megadeth" },
-  { src: "/art/obra9.jpg", alt: "The creature", title: "The creature - Frankenstein" },
-  { src: "/art/obra10.jpg", alt: "The creature", title: "The creature - Frankenstein - Lineart" },
-  { src: "/art/obra2.jpg", alt: "Ramona", title: "Ramona Flowers" },
-  { src: "/art/obra3.jpg", alt: "Mark Grayson", title: "Mark - Invencible" },
-  { src: "/art/obra4.jpg", alt: "Pomni", title: "Pomni - TADC" },
-  { src: "/art/obra5.jpg", alt: "Fionna Campbell", title: "Sketch de Fionna Campbell - HDA" },
-  { src: "/art/obra6.jpg", alt: "Finn", title: "Finn el Humano - HDA" },
+  { src: "/art/obra1.png", alt: "Sam", title: "Sam - Stardew Valley" },
+  { src: "/art/obra2.png", alt: "Ramona", title: "Ramona Flowers" },
+  { src: "/art/obra3.png", alt: "Mark Grayson", title: "Mark - Invencible" },
+  { src: "/art/obra4.png", alt: "Pomni", title: "Pomni - TADC" },
+  { src: "/art/obra5.png", alt: "Fionna Campbell", title: "Sketch de Fionna Campbell - HDA" },
+  { src: "/art/obra6.png", alt: "Finn", title: "Finn el Humano - HDA" },
+  { src: "/art/obra7.png", alt: "obra 7", title: "Fionna Campbell - HDA" },
+  { src: "/art/obra8.png", alt: "Dave Mustaine", title: "Dave Mustaine - Megadeth" },
+  { src: "/art/obra9.png", alt: "The creature", title: "The creature - Frankenstein" },
+  { src: "/art/obra10.png", alt: "The creature", title: "The creature - Frankenstein Lineart" },
 ]
