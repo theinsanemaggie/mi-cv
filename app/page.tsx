@@ -1,65 +1,114 @@
-import Image from "next/image";
+"use client"
+
+import Link from "next/link"
+import { SectionLabel } from "@/components/Tags"
+import ProjectCard from "@/components/ProjectCard"
+import { softwareProjects } from "@/lib/data"
+
+const destacados = [...softwareProjects].sort((a, b) => Number(b.year) - Number(a.year)).slice(0, 2)
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div className="py-8 sm:py-12" style={{ fontFamily: "'Space Mono', monospace" }}>
+      {/* Hero */}
+      <section className="mb-10">
+        <p className="text-sm tracking-wide mb-2" style={{ color: "var(--teal)" }}>
+          hola, soy
+        </p>
+        <h1
+          className="font-bold leading-none uppercase"
+          style={{
+            fontSize: "clamp(52px,12vw,82px)",
+            color: "var(--pink)",
+            letterSpacing: "-0.02em",
+          }}
+        >
+          magalí.
+        </h1>
+        <p
+          className="text-sm tracking-[.2em] uppercase mt-2"
+          style={{ color: "var(--muted)" }}
+        >
+          developer &amp; illustrator · buenos aires
+        </p>
+        <p className="text-base mt-5 max-w-lg leading-relaxed" style={{ color: "var(--text)" }}>
+          Código de día, tinta de noche. Construyo interfaces web prolijas y dibujo
+          personajes con demasiada personalidad — a veces al mismo tiempo.
+        </p>
+        <div className="flex flex-wrap gap-3 mt-6">
+          <Link
+            href="/proyectos"
+            className="inline-flex items-center gap-2 text-sm tracking-wide uppercase px-5 py-3 rounded-full transition-opacity hover:opacity-80"
+            style={{ background: "var(--pink)", color: "#fff" }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+            ver portfolio
+          </Link>
+          <Link
+            href="/contacto"
+            className="inline-flex items-center gap-2 text-sm tracking-wide uppercase px-5 py-3 rounded-full transition-colors"
+            style={{ border: "1.5px solid var(--dark3)", color: "var(--text)" }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--teal)")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--dark3)")}
+          >
+            hablemos
+          </Link>
+        </div>
+      </section>
+
+      {/* Destacados */}
+      <section className="mb-10">
+        <SectionLabel>destacados</SectionLabel>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {destacados.map((p) => (
+            <ProjectCard
+              key={p.title}
+              title={p.title}
+              desc={p.desc}
+              tags={p.tags}
+              url={p.url}
+              meta={p.year}
+              type="code"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          ))}
+
+          <Link
+            href="/proyectos"
+            className="flex flex-col justify-center rounded-xl p-5 transition-colors duration-200"
+            style={{ background: "var(--dark)", border: "1.5px solid rgba(227,0,106,0.35)" }}
           >
-            Documentation
-          </a>
+            <p className="text-lg font-bold" style={{ color: "var(--pink)" }}>
+              Ilustración
+            </p>
+            <p className="text-sm mt-2 leading-relaxed" style={{ color: "var(--text)" }}>
+              Personajes de series, videojuegos y comisiones a pedido. Estilo cartoon,
+              color plano, mucha expresión.
+            </p>
+            <span className="text-sm mt-3" style={{ color: "var(--pink)" }}>
+              ver galería →
+            </span>
+          </Link>
         </div>
-      </main>
+      </section>
+
+      {/* CTA final */}
+      <section
+        className="rounded-xl p-6 sm:p-8 mb-6 text-center"
+        style={{ background: "var(--dark)", border: "1.5px solid var(--dark3)" }}
+      >
+        <p className="text-lg font-bold" style={{ color: "#e5e5e5" }}>
+          ¿Tenés un proyecto en mente o querés una ilustración a medida?
+        </p>
+        <p className="text-sm mt-2" style={{ color: "var(--muted)" }}>
+          Me encanta escuchar ideas nuevas.
+        </p>
+        <Link
+          href="/contacto"
+          className="inline-flex items-center gap-2 mt-5 text-sm tracking-wide uppercase px-6 py-3 rounded-full transition-opacity hover:opacity-80"
+          style={{ background: "var(--teal)", color: "#fff" }}
+        >
+          escribime →
+        </Link>
+      </section>
     </div>
-  );
+  )
 }
