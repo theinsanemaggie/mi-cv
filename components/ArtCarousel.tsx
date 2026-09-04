@@ -48,6 +48,7 @@ export default function ArtCarousel({ items }: Props) {
               src={item.src}
               alt={item.alt}
               fill
+              sizes="(min-width: 640px) 33vw, 50vw"
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             {/* Overlay: siempre visible en touch, on-hover en desktop */}

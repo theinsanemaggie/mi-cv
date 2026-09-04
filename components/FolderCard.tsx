@@ -24,7 +24,7 @@ export default function FolderCard({ title, desc, tags, url, year, collab }: Sys
 
   return (
     <div
-      className="rounded-xl overflow-hidden transition-colors duration-200"
+      className="card-hover rounded-xl overflow-hidden transition-colors duration-200"
       style={{
         background: "var(--dark)",
         border: `1.5px solid ${open ? (collab ? "var(--red)" : "var(--teal)") : "var(--dark3)"}`,

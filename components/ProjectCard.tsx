@@ -17,7 +17,7 @@ export default function ProjectCard({ title, desc, tags, url, meta, type }: Prop
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block rounded-xl p-5 transition-colors duration-200"
+      className="card-hover block rounded-xl p-5 transition-colors duration-200"
       style={{
         background: "var(--dark)",
         border: "1.5px solid var(--dark3)",

@@ -54,6 +54,7 @@ export default function Lightbox({ src, alt, onClose }: Props) {
           alt={alt}
           width={900}
           height={900}
+          sizes="(min-width: 768px) 768px, 100vw"
           className="w-full h-auto object-contain"
           style={{ maxHeight: "85vh" }}
         />

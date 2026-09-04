@@ -166,6 +166,14 @@ export type VideojuegoItem = {
 
 export const videojuegos: VideojuegoItem[] = [
   {
+    title: "Cosmos",
+    desc: "Plataformero 2D en desarrollo con Godot: salto, disparo y dash, con enemigos, coleccionables y niveles propios.",
+    tags: ["Godot", "GDScript", "Plataformero"],
+    githubUrl: "https://github.com/theinsanemaggie/cosmos",
+    year: "2026",
+    collab: false,
+  },
+  {
     title: "JuegoNacional",
     desc: "Videojuego desarrollado para Programación 2 de la carrera. Trabajo grupal con lógica de juego implementada en C#.",
     tags: ["C#", "Equipo"],
@@ -184,6 +192,51 @@ export const videojuegos: VideojuegoItem[] = [
 ]
 
 /*
+  INSTRUCCIONES PARA AGREGAR LA CAPTURA DE UN SITIO:
+  1. Guardá la imagen en /public/pages/ (ej: /public/pages/mi-sitio.webp).
+  2. Completá el campo "preview" de la entrada correspondiente acá abajo con ese path.
+     Mientras "preview" esté vacío, la card muestra un placeholder en su lugar.
+*/
+export type WebSiteItem = {
+  title: string
+  desc: string
+  tags: string[]
+  url: string
+  preview?: string
+}
+
+export const webSites: WebSiteItem[] = [
+  {
+    title: "Cuibel Propiedades",
+    desc: "Diseño y desarrollo full stack de un sitio inmobiliario, de punta a punta.",
+    tags: ["PHP", "HTML", "CSS", "JavaScript"],
+    url: "https://cquibelpropiedades.com.ar/",
+    preview: "/pages/cquibel.webp",
+  },
+  {
+    title: "Truver",
+    desc: "Desarrollo front-end de la plataforma, con React.",
+    tags: ["HTML", "CSS", "JavaScript", "React"],
+    url: "https://www.truver.com.ar/",
+    preview: "/pages/truver.webp",
+  },
+  {
+    title: "Santa Ramona",
+    desc: "Backend del sistema de gestión, construido en C# con .NET (MVC).",
+    tags: ["C#", ".NET", "MVC"],
+    url: "https://santaramona.org/HomePublic/IndexPublic",
+    preview: "/pages/santaramona.webp",
+  },
+  {
+    title: "Indigo Sport",
+    desc: "Desarrollo front-end sobre WordPress.",
+    tags: ["WordPress"],
+    url: "https://indigo.sport/argentina/",
+    preview: "/pages/indigo.webp",
+  },
+]
+
+/*
   INSTRUCCIONES PARA AGREGAR TUS IMÁGENES DE ARTE:
   1. Poné tus imágenes en la carpeta /public/art/
      Ej: /public/art/obra1.jpg, /public/art/obra2.png, etc.
@@ -196,14 +249,80 @@ export type ArtItem = {
 }
 
 export const artItems: ArtItem[] = [
-  { src: "/art/obra1.png", alt: "Sam", title: "Sam - Stardew Valley" },
-  { src: "/art/obra2.png", alt: "Ramona", title: "Ramona Flowers" },
-  { src: "/art/obra3.png", alt: "Mark Grayson", title: "Mark - Invencible" },
-  { src: "/art/obra4.png", alt: "Pomni", title: "Pomni - TADC" },
-  { src: "/art/obra5.png", alt: "Fionna Campbell", title: "Sketch de Fionna Campbell - HDA" },
-  { src: "/art/obra6.png", alt: "Finn", title: "Finn el Humano - HDA" },
-  { src: "/art/obra7.png", alt: "obra 7", title: "Fionna Campbell - HDA" },
-  { src: "/art/obra8.png", alt: "Dave Mustaine", title: "Dave Mustaine - Megadeth" },
-  { src: "/art/obra9.png", alt: "The creature", title: "The creature - Frankenstein" },
-  { src: "/art/obra10.png", alt: "The creature", title: "The creature - Frankenstein Lineart" },
+  { src: "/art/obra1.webp", alt: "Sam", title: "Sam - Stardew Valley" },
+  { src: "/art/obra2.webp", alt: "Ramona", title: "Ramona Flowers" },
+  { src: "/art/obra3.webp", alt: "Mark Grayson", title: "Mark - Invencible" },
+  { src: "/art/obra4.webp", alt: "Pomni", title: "Pomni - TADC" },
+  { src: "/art/obra5.webp", alt: "Fionna Campbell", title: "Sketch de Fionna Campbell - HDA" },
+  { src: "/art/obra6.webp", alt: "Finn", title: "Finn el Humano - HDA" },
+  { src: "/art/obra7.webp", alt: "obra 7", title: "Fionna Campbell - HDA" },
+  { src: "/art/obra8.webp", alt: "Dave Mustaine", title: "Dave Mustaine - Megadeth" },
+  { src: "/art/obra9.webp", alt: "The creature", title: "The creature - Frankenstein" },
+  { src: "/art/obra10.webp", alt: "The creature", title: "The creature - Frankenstein Lineart" },
+  // Título provisorio — corregilo cuando quieras, ver instrucciones arriba.
+  { src: "/art/gerard-way.webp", alt: "Gerard Way", title: "Gerard Way" },
+  { src: "/art/jake.webp", alt: "Jake", title: "Jake" },
+  { src: "/art/objetivos-dorso.webp", alt: "Objetivos, dorso", title: "Objetivos (dorso)" },
+  { src: "/art/papemeritus.webp", alt: "Papemeritus", title: "Papemeritus" },
+  { src: "/art/robo-del-siglo-dorso.webp", alt: "Robo del Siglo, dorso", title: "Robo del Siglo (dorso)" },
+  { src: "/art/room3-fondo.webp", alt: "Room 3, fondo", title: "Room 3 (fondo)" },
+  { src: "/art/room5v2.webp", alt: "Room 5", title: "Room 5" },
+  { src: "/art/sam.webp", alt: "Sam", title: "Sam" },
+]
+
+/*
+  Íconos decorativos (fondo transparente) para usar como acento visual
+  en secciones estratégicas — sobre todo en Proyectos → Ilustración.
+*/
+export type DecorItem = {
+  src: string
+  alt: string
+}
+
+export const decorIcons: DecorItem[] = [
+  { src: "/art/comodin.webp", alt: "Sombrero de bufón" },
+  { src: "/art/demencia.webp", alt: "Cara con espirales" },
+  { src: "/art/hacker.webp", alt: "Cara con cinta en la boca" },
+  { src: "/art/rehen.webp", alt: "Cara de diablito" },
+  { src: "/art/secuaz.webp", alt: "Personaje con notebook" },
+]
+
+/*
+  INSTRUCCIONES PARA AGREGAR LA CAPTURA DE UN POSTEO DE INSTAGRAM:
+  1. Guardá la imagen en /public/ig/ (ej: /public/ig/mi-posteo.webp).
+  2. Completá el campo "preview" de la entrada correspondiente acá abajo con ese path.
+     Mientras "preview" esté vacío, la card muestra un placeholder en su lugar.
+*/
+export type InstagramPost = {
+  title: string
+  caption: string
+  url: string
+  preview?: string
+}
+
+export const instagramPosts: InstagramPost[] = [
+  {
+    title: "Speedpaint Dave Mustaine",
+    caption: "Proceso de dibujo del Colo Mustaine, de Megadeth.",
+    url: "https://www.instagram.com/reel/DF5dcVlxUG8/",
+    preview: "/ig/dave-mustaine.webp",
+  },
+  {
+    title: "Robo del Siglo — juego de cartas",
+    caption: "Juego de cartas de mesa, proyecto universitario de diseño de juegos.",
+    url: "https://www.instagram.com/p/DXhWuwmjb70/",
+    preview: "/ig/robo-del-siglo.webp",
+  },
+  {
+    title: "Dibujar o sobrevivir — juego",
+    caption: "Ilustración de portada para el juego grupal, con Nicolás Castillo, Belén Campagnuolo y Facundo Teijido.",
+    url: "https://www.instagram.com/p/DaN0QiVHJ6p/",
+    preview: "/ig/dibujar-o-sobrevivir.webp",
+  },
+  {
+    title: "Sketchbook 2025",
+    caption: "Una página de mi cuaderno de bocetos.",
+    url: "https://www.instagram.com/reel/DMi6sCKBlFx/",
+    preview: "/ig/sketchbook-2025.webp",
+  },
 ]

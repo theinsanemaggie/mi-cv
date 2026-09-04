@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import { SectionLabel, TagPill } from "@/components/Tags"
+import Window from "@/components/Window"
 import { experience, education, skillsCode, skillsArt } from "@/lib/data"
 
 export const metadata: Metadata = {
@@ -11,29 +12,35 @@ export const metadata: Metadata = {
 export default function SobreMi() {
   return (
     <div className="py-8 sm:py-12" style={{ fontFamily: "'Space Mono', monospace" }}>
+      <h1 className="text-3xl font-bold mb-8" style={{ color: "var(--pink)" }}>
+        Sobre mí
+      </h1>
+
       {/* Perfil */}
-      <section className="mb-12 flex items-center gap-5">
-        <div
-          className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0"
-          style={{ border: "2px solid var(--pink)" }}
-        >
-          <Image src="/foto.png" alt="Magalí Amato" fill className="object-cover" />
+      <Window path="C:\theinsanemaggie\sobre-mi\perfil" className="mb-6">
+        <div className="flex items-center gap-5">
+          <div
+            className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0"
+            style={{ border: "2px solid var(--pink)" }}
+          >
+            <Image src="/perfil.webp" alt="Magalí Amato" fill sizes="80px" className="object-cover" />
+          </div>
+          <div>
+            <p className="text-xl font-bold" style={{ color: "var(--pink)" }}>
+              Magalí Amato
+            </p>
+            <p className="text-sm tracking-widest uppercase mt-1" style={{ color: "var(--teal)" }}>
+              front-end dev · ilustradora · BsAs
+            </p>
+            <p className="text-base mt-2 italic" style={{ color: "var(--muted)" }}>
+              &ldquo;Endure and survive&rdquo;
+            </p>
+          </div>
         </div>
-        <div>
-          <h1 className="text-2xl font-bold" style={{ color: "var(--pink)" }}>
-            Magalí Amato
-          </h1>
-          <p className="text-sm tracking-widest uppercase mt-1" style={{ color: "var(--teal)" }}>
-            front-end dev · ilustradora · BsAs
-          </p>
-          <p className="text-base mt-2 italic" style={{ color: "var(--muted)" }}>
-            "código de día, tinta de noche"
-          </p>
-        </div>
-      </section>
+      </Window>
 
       {/* Experiencia */}
-      <section className="mb-12">
+      <Window path="C:\theinsanemaggie\sobre-mi\experiencia" className="mb-6">
         <SectionLabel>experiencia</SectionLabel>
         <div className="flex flex-col gap-6">
           {experience.map((exp, i) => (
@@ -65,11 +72,11 @@ export default function SobreMi() {
             </div>
           ))}
         </div>
-      </section>
+      </Window>
 
       {/* Educación */}
-      <section className="mb-12">
-        <SectionLabel>educación</SectionLabel>
+      <Window path="C:\theinsanemaggie\sobre-mi\educacion" className="mb-6">
+        <SectionLabel>Educación</SectionLabel>
         <div className="flex flex-col gap-5">
           {education.map((ed, i) => (
             <div key={i}>
@@ -88,11 +95,11 @@ export default function SobreMi() {
             </div>
           ))}
         </div>
-      </section>
+      </Window>
 
       {/* Skills */}
-      <section>
-        <SectionLabel>skills</SectionLabel>
+      <Window path="C:\theinsanemaggie\sobre-mi\skills">
+        <SectionLabel>Skills</SectionLabel>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <p className="text-sm uppercase tracking-widest mb-3" style={{ color: "var(--teal)" }}>
@@ -115,7 +122,7 @@ export default function SobreMi() {
             </div>
           </div>
         </div>
-      </section>
+      </Window>
     </div>
   )
 }

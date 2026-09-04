@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { SectionLabel } from "@/components/Tags"
+import Window from "@/components/Window"
 
 export const metadata: Metadata = {
   title: "Contacto · Magalí Amato",
@@ -81,37 +82,39 @@ export default function Contacto() {
         más te acomode, te respondo apenas puedo.
       </p>
 
-      <SectionLabel>canales</SectionLabel>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {channels.map((c) => (
-          <a
-            key={c.label}
-            href={c.href}
-            target={c.label === "Email" ? undefined : "_blank"}
-            rel={c.label === "Email" ? undefined : "noopener noreferrer"}
-            className="flex items-start gap-4 rounded-xl p-5 transition-colors duration-200"
-            style={{ background: "var(--dark)", border: "1.5px solid var(--dark3)" }}
-          >
-            <div
-              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
-              style={{ background: "var(--dark2)", color: c.accent }}
+      <Window path="C:\theinsanemaggie\contacto\canales">
+        <SectionLabel>canales</SectionLabel>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {channels.map((c) => (
+            <a
+              key={c.label}
+              href={c.href}
+              target={c.label === "Email" ? undefined : "_blank"}
+              rel={c.label === "Email" ? undefined : "noopener noreferrer"}
+              className="card-hover flex items-start gap-4 rounded-xl p-5 transition-colors duration-200"
+              style={{ background: "var(--dark2)", border: "1.5px solid var(--dark3)" }}
             >
-              {c.icon}
-            </div>
-            <div>
-              <p className="text-base font-bold" style={{ color: "#e5e5e5" }}>
-                {c.label}
-              </p>
-              <p className="text-sm mt-0.5" style={{ color: c.accent }}>
-                {c.handle}
-              </p>
-              <p className="text-sm mt-2 leading-relaxed" style={{ color: "var(--muted)" }}>
-                {c.desc}
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
+              <div
+                className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ background: "var(--dark)", color: c.accent }}
+              >
+                {c.icon}
+              </div>
+              <div>
+                <p className="text-base font-bold" style={{ color: "#e5e5e5" }}>
+                  {c.label}
+                </p>
+                <p className="text-sm mt-0.5" style={{ color: c.accent }}>
+                  {c.handle}
+                </p>
+                <p className="text-sm mt-2 leading-relaxed" style={{ color: "var(--muted)" }}>
+                  {c.desc}
+                </p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </Window>
     </div>
   )
 }

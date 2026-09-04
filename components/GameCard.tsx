@@ -9,7 +9,7 @@ export default function GameCard({ title, desc, tags, year, collab, githubUrl, i
 
   return (
     <div
-      className="rounded-xl overflow-hidden transition-colors duration-200"
+      className="card-hover rounded-xl overflow-hidden transition-colors duration-200"
       style={{ background: "var(--dark)", border: `1.5px solid ${playing ? "var(--teal)" : "var(--dark3)"}` }}
     >
       {embedUrl && playing && (
@@ -18,6 +18,9 @@ export default function GameCard({ title, desc, tags, year, collab, githubUrl, i
             src={embedUrl}
             title={title}
             allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-popups"
             className="absolute inset-0 w-full h-full"
             style={{ border: "none" }}
           />
