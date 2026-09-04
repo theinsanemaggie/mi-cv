@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Lightbox from "./Lightbox"
+import { withBasePath } from "@/lib/basePath"
 
 type ArtItem = {
   src: string
@@ -45,7 +46,7 @@ export default function ArtCarousel({ items }: Props) {
             aria-label={`Ampliar: ${item.title}`}
           >
             <Image
-              src={item.src}
+              src={withBasePath(item.src)}
               alt={item.alt}
               fill
               sizes="(min-width: 640px) 33vw, 50vw"
@@ -148,7 +149,7 @@ export default function ArtCarousel({ items }: Props) {
       {/* Lightbox */}
       {lightbox && (
         <Lightbox
-          src={lightbox.src}
+          src={withBasePath(lightbox.src)}
           alt={lightbox.alt}
           onClose={() => setLightbox(null)}
         />

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import type { InstagramPost } from "@/lib/data"
+import { withBasePath } from "@/lib/basePath"
 
 export default function InstagramCard({ title, caption, url, preview }: InstagramPost) {
   return (
@@ -15,7 +16,7 @@ export default function InstagramCard({ title, caption, url, preview }: Instagra
         style={{ aspectRatio: "1", background: "linear-gradient(135deg, #1a0012, #0a1a1a)" }}
       >
         {preview ? (
-          <Image src={preview} alt={title} fill sizes="(min-width: 640px) 25vw, 50vw" className="object-cover" />
+          <Image src={withBasePath(preview)} alt={title} fill sizes="(min-width: 640px) 25vw, 50vw" className="object-cover" />
         ) : (
           <span className="text-xs tracking-widest uppercase" style={{ color: "#3a3a3a" }}>
             vista previa próximamente

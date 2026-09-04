@@ -8,6 +8,7 @@ import InstagramCard from "@/components/InstagramCard"
 import ArtCarousel from "@/components/ArtCarousel"
 import Window from "@/components/Window"
 import { softwareProjects, videojuegos, artItems, webSites, decorIcons, instagramPosts } from "@/lib/data"
+import { withBasePath } from "@/lib/basePath"
 
 const rotations = [-8, 6, -4, 9, -6]
 
@@ -39,7 +40,7 @@ export default function Proyectos() {
                 className="relative w-[57px] h-[57px]"
                 style={{ transform: `rotate(${rotations[i % rotations.length]}deg)` }}
               >
-                <Image src={d.src} alt={d.alt} fill sizes="57px" className="object-contain" />
+                <Image src={withBasePath(d.src)} alt={d.alt} fill sizes="57px" className="object-contain" />
               </div>
             ))}
           </div>

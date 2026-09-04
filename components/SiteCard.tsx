@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { TagPill } from "./Tags"
 import type { WebSiteItem } from "@/lib/data"
+import { withBasePath } from "@/lib/basePath"
 
 export default function SiteCard({ title, desc, tags, url, preview }: WebSiteItem) {
   return (
@@ -17,7 +18,7 @@ export default function SiteCard({ title, desc, tags, url, preview }: WebSiteIte
       >
         {preview ? (
           <Image
-            src={preview}
+            src={withBasePath(preview)}
             alt={`Captura de ${title}`}
             fill
             sizes="(min-width: 640px) 50vw, 100vw"

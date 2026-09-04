@@ -3,6 +3,7 @@ import Image from "next/image"
 import { SectionLabel, TagPill } from "@/components/Tags"
 import Window from "@/components/Window"
 import { experience, education, skillsCode, skillsArt } from "@/lib/data"
+import { withBasePath } from "@/lib/basePath"
 
 export const metadata: Metadata = {
   title: "Sobre mí · Magalí Amato",
@@ -23,7 +24,7 @@ export default function SobreMi() {
             className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden flex-shrink-0"
             style={{ border: "2px solid var(--pink)" }}
           >
-            <Image src="/perfil.webp" alt="Magalí Amato" fill sizes="80px" className="object-cover" />
+            <Image src={withBasePath("/perfil.webp")} alt="Magalí Amato" fill sizes="80px" className="object-cover" />
           </div>
           <div>
             <p className="text-xl font-bold" style={{ color: "var(--pink)" }}>

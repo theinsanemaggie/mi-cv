@@ -7,6 +7,7 @@ import SiteCard from "@/components/SiteCard"
 import InstagramCard from "@/components/InstagramCard"
 import Window from "@/components/Window"
 import { softwareProjects, videojuegos, webSites, instagramPosts } from "@/lib/data"
+import { withBasePath } from "@/lib/basePath"
 
 export const metadata: Metadata = {
   title: "Magalí Amato · Developer & Illustrator",
@@ -31,7 +32,7 @@ export default function Home() {
         </p>
         <h1 className="leading-none">
           <Image
-            src="/art/maggie.webp"
+            src={withBasePath("/art/maggie.webp")}
             alt="Magalí Amato"
             width={1200}
             height={573}
@@ -74,7 +75,7 @@ export default function Home() {
             className="relative w-14 h-14 rounded-full overflow-hidden flex-shrink-0"
             style={{ border: "2px solid var(--pink)" }}
           >
-            <Image src="/perfil.webp" alt="Magalí Amato" fill sizes="56px" className="object-cover" />
+            <Image src={withBasePath("/perfil.webp")} alt="Magalí Amato" fill sizes="56px" className="object-cover" />
           </div>
           <div>
             <p className="text-base font-bold" style={{ color: "var(--pink)" }}>
