@@ -29,15 +29,16 @@ export default function Home() {
         <p className="text-sm tracking-wide mb-2" style={{ color: "var(--teal)" }}>
           hola, soy
         </p>
-        <h1
-          className="font-bold leading-none uppercase"
-          style={{
-            fontSize: "clamp(52px,12vw,82px)",
-            color: "var(--pink)",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          magalí.
+        <h1 className="leading-none">
+          <Image
+            src="/art/maggie.webp"
+            alt="Magalí Amato"
+            width={1200}
+            height={573}
+            priority
+            className="h-auto w-auto"
+            style={{ maxWidth: "clamp(308px, 60vw, 528px)" }}
+          />
         </h1>
         <p
           className="text-sm tracking-[.2em] uppercase mt-2"
