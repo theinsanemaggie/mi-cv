@@ -96,9 +96,15 @@ export const education: EducationItem[] = [
     period: "oct. 2025",
     note: "MongoDB · JavaScript · Node.js · Express · API REST",
   },
+  {
+    degree: "Introducción al desarrollo de videojuegos con Godot Engine",
+    school: "Academia Pira",
+    period: "jun. 2026",
+    note: "Godot · GDScript · Programación orientada a objetos (POO) · itch.io · Git · GitHub",
+  },
 ]
 
-export const skillsCode = ["C#", "TypeScript", "JavaScript", "Python", "Django", "React", "Next.js", "Node.js", "HTML/CSS", "SQL", "Git", "Scrum", "Soporte técnico", "Sistemas informáticos"]
+export const skillsCode = ["C#", "TypeScript", "JavaScript", "Python", "Django", "React", "Next.js", "Node.js", "Godot", "GDScript", "HTML/CSS", "SQL", "Git", "Scrum", "Soporte técnico", "Sistemas informáticos"]
 export const skillsArt = ["Illustrator", "PaintToolSai", "Ilustración digital", "Vectorial", "Character design", "Animación"]
 
 export type SysProject = {
