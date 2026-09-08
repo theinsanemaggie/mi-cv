@@ -133,22 +133,6 @@ export const softwareProjects: SysProject[] = [
     year: "2025",
     collab: true,
   },
-  {
-    title: "BackOfficeSantaRamona",
-    desc: "Proyecto colaborativo de backoffice web. Contribución a sistema de gestión interna con HTML y estilos.",
-    tags: ["HTML", "CSS"],
-    url: "https://github.com/CarlaCarpi/BackOfficeCarli",
-    year: "2025",
-    collab: true,
-  },
-  {
-    title: "SantaRamona",
-    desc: "Proyecto colaborativo en C#. Desarrollo de sistema de gestión para negocio local.",
-    tags: ["C#"],
-    url: "https://github.com/CarlaCarpi/SantaRamona",
-    year: "2025",
-    collab: true,
-  },
 ]
 
 /*
@@ -194,6 +178,14 @@ export const videojuegos: VideojuegoItem[] = [
     githubUrl: "https://github.com/theinsanemaggie/P1UNICABAJ1",
     year: "2026",
     collab: false,
+  },
+  {
+    title: "ProyectoCuatri1",
+    desc: "Juego 2D grupal del primer cuatrimestre de la carrera, hecho en Unity: combate, enemigos, sistema de vida y diálogos.",
+    tags: ["Unity", "C#", "Equipo"],
+    githubUrl: "https://github.com/theinsanemaggie/ProyectoCuatri1",
+    year: "2026",
+    collab: true,
   },
 ]
 
